@@ -82,7 +82,7 @@
         .about-me {
             opacity: 0;
             color: white;
-            width: 400px;
+            max-width: 400px;
             transition: 3s;
         }
 
@@ -199,8 +199,7 @@
 
 
         #mobile-cchl img {
-            width: 300px;
-            margin: 0 100px;
+            max-width: 300px;
         }
 
         /*
