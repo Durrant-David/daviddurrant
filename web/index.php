@@ -62,21 +62,9 @@
             opacity: 0.7;
         }
 
-        .intro-button-container:hover>.intro-button,
-        a:link {
+        .intro-button-container:hover>.intro-button {
             color: black;
             opacity: 0.7;
-        }
-
-        .intro-button,
-        a:link {
-            color: white;
-            text-decoration: none;
-        }
-
-        .intro-button,
-        a:visited {
-            color: white;
         }
 
         .text-blue {
@@ -174,6 +162,57 @@
             z-index: 2;
         }
 
+
+
+
+        .mobile-display + .md {
+            margin-right: 100px;
+            opacity: 0;
+            transition: 2s;
+        }
+        
+        .mobile-display.active +.md {
+            margin-right: 0;
+            opacity: 1;
+        }
+
+        #mobile-proxialert {
+            align-content: center;
+        }
+        
+        #mobile-proxialert img {
+            width: 300px;
+            margin: 0 100px 200px;
+        }
+
+/*
+        #mobile-proxialert {
+            margin: 0 50vh;
+        }
+
+        #proxi-desc {
+            margin: 0 50vh 300px;
+            width: 500px;
+        }
+*/
+
+        
+        #mobile-cchl img {
+            width: 300px;
+            margin: 0 100px;
+        }
+/*
+
+        #mobile-cchl {
+            margin: 0 55vh;
+        }
+
+        #cchl-desc {
+            margin: 0 150vh 300px;
+            width: 500px;
+        }
+*/
+
     </style>
 </head>
 
@@ -185,21 +224,23 @@
                     Hello, my name is <a class="text-blue">David Durrant</a>.
                     <br> I'm a Software Engineer.
                 </div>
-                <div class="intro-button-container">
-                    <a href="#about" class="intro-button">View my work</a>
+                <div onclick="introBtn('about')" class="intro-button-container">
+                    <div class="intro-button">View my work</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="section-spacer">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
+                    <li class="active" onclick="introBtn('intro')"><a>Home</a></li>
+                    <li onclick="introBtn('about')"><a>About</a></li>
+                    <li onclick="introBtn('skills')"><a>Skills</a></li>
+                    <li onclick="introBtn('projects')"><a>Projects</a></li>
+<!--                    <li onclick="introBtn('contact')"><a>Contact</a></li>-->
+                    <li><a href="Views/resume.pdf">Resume</a></li>
                 </ul>
             </div>
         </nav>
@@ -313,14 +354,43 @@
         </div>
     </section>
     <section id="projects" class="section-spacer">
-        <div>
-            <img src="../media/images/proxialert-mobile.png">
-        </div>
-        <div>
-            <img src="../media/images/cchl-mobile.png">
+        <div class="container">
+            <div id="proxi" class="mobile-display"></div>
+            <div class="row md">
+                <div id="mobile-proxialert" class="col-sm-6">
+                    <img src="../media/images/proxialert-mobile.png">
+                </div>
+                <div id="proxi-desc" class="col-sm-6">
+                    <h1>ProxiAlert</h1>
+                    <p>ProxiAlert is an android app designed to notify the user when they aproach a specified location. It was created for a small busness owner who makes visits to apartment offices; needing a way to remind him when he is in the area.
+                        features include: Local storage, geofencing, gmaps directions, gmaps display of all locations, recorded voice for hands free, due date.</p>
+                </div>
+            </div>
+            <div id="cchl" class="mobile-display"></div>
+            <div class="row md">
+                <div class="col-sm-2"></div>
+                <div id="cchl-desc" class="col-sm-4">
+                    <h1>CCHL</h1>
+                    <p>This app was designed to improve productivity at my current job. It helps my team keep track of 1700 different lights.
+                        features include: Data sorting and editing, API, google users </p>
+                </div>
+                <div id="mobile-cchl" class="col-sm-6">
+                    <img src="../media/images/cchl-mobile.png">
+                </div>
+            </div>
         </div>
     </section>
+    <section id="contact">
+        
+    </section>
     <script>
+        function introBtn(id) {
+            document.getElementById(id).scrollIntoView({
+                block: 'start',
+                behavior: 'smooth'
+            });
+        }
+
         function isInViewport(elem) {
             var bounding = elem.getBoundingClientRect();
             return (
@@ -346,6 +416,8 @@
         var php = document.getElementById('php');
         var sql = document.getElementById('sql');
         var git = document.getElementById('git');
+        var proxi = document.getElementById('proxi');
+        var cchl = document.getElementById('cchl');
 
         window.addEventListener('scroll', function(event) {
             if (isInViewport(aboutme)) {
@@ -390,6 +462,14 @@
 
             if (isInViewport(git)) {
                 setTimeout(makeActive.bind(null, git), 750);
+            }
+
+            if (isInViewport(proxi)) {
+                makeActive(proxi);
+            }
+
+            if (isInViewport(cchl)) {
+                makeActive(cchl);
             }
 
         }, false);
