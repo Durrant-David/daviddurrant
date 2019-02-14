@@ -33,7 +33,7 @@
             font-size: 2em;
             text-align: center;
             opacity: 0.7;
-            width: 480px;
+            max-width: 480px;
             margin: auto;
             padding: 10px;
             border-radius: 15px;
@@ -104,7 +104,8 @@
 
         .skill-title.active {
             color: black;
-            margin: 0 100vh;
+            text-align: center;
+/*            margin: 0 100vh;*/
         }
 
         .skill-image {
