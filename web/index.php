@@ -10,6 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+        .no-line-break {
+            white-space: nowrap;
+        }
+
         .parallax-scrolling {
             /* The image used */
             background-image: url("../media/images/backgrounds/business-code-coding-270360.jpg");
@@ -96,16 +100,13 @@
 
         .profile-pic.active img {
             opacity: 1;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
             box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
         }
 
         .skill-title.active {
             color: black;
             text-align: center;
-/*            margin: 0 100vh;*/
+            /*            margin: 0 100vh;*/
         }
 
         .skill-image {
@@ -166,13 +167,13 @@
 
 
 
-        .mobile-display + .md {
+        .mobile-display+.md {
             margin-right: 100px;
             opacity: 0;
             transition: 2s;
         }
-        
-        .mobile-display.active +.md {
+
+        .mobile-display.active+.md {
             margin-right: 0;
             opacity: 1;
         }
@@ -180,13 +181,12 @@
         #mobile-proxialert {
             align-content: center;
         }
-        
+
         #mobile-proxialert img {
-            width: 300px;
-            margin: 0 100px 200px;
+            max-width: 300px;
         }
 
-/*
+        /*
         #mobile-proxialert {
             margin: 0 50vh;
         }
@@ -197,12 +197,13 @@
         }
 */
 
-        
+
         #mobile-cchl img {
             width: 300px;
             margin: 0 100px;
         }
-/*
+
+        /*
 
         #mobile-cchl {
             margin: 0 55vh;
@@ -222,7 +223,7 @@
         <div class="parallax-tint">
             <div class="intro-box">
                 <div class="intro">
-                    Hello, my name is <a class="text-blue">David Durrant</a>.
+                    Hello, my name is <a class="text-blue no-line-break">David Durrant</a>.
                     <br> I'm a Software Engineer.
                 </div>
                 <div onclick="introBtn('about')" class="intro-button-container">
@@ -240,7 +241,7 @@
                     <li onclick="introBtn('about')"><a>About</a></li>
                     <li onclick="introBtn('skills')"><a>Skills</a></li>
                     <li onclick="introBtn('projects')"><a>Projects</a></li>
-<!--                    <li onclick="introBtn('contact')"><a>Contact</a></li>-->
+                    <!--                    <li onclick="introBtn('contact')"><a>Contact</a></li>-->
                     <li><a href="Views/resume.pdf">Resume</a></li>
                 </ul>
             </div>
@@ -248,7 +249,7 @@
         <div class="container">
             <div class="row">
                 <div id="profilepic" class="col-sm-6 profile-pic">
-                    <img src="../media/images/profile.jpg">
+                    <img class="center-block" src="../media/images/profile.jpg">
                 </div>
                 <div id="aboutme" class="col-sm-6 about-me">
                     <h1>About me</h1>
@@ -359,7 +360,7 @@
             <div id="proxi" class="mobile-display"></div>
             <div class="row md">
                 <div id="mobile-proxialert" class="col-sm-6">
-                    <img src="../media/images/proxialert-mobile.png">
+                    <img class="center-block" src="../media/images/proxialert-mobile.png">
                 </div>
                 <div id="proxi-desc" class="col-sm-6">
                     <h1>ProxiAlert</h1>
@@ -376,13 +377,13 @@
                         features include: Data sorting and editing, API, google users </p>
                 </div>
                 <div id="mobile-cchl" class="col-sm-6">
-                    <img src="../media/images/cchl-mobile.png">
+                    <img class="center-block" src="../media/images/cchl-mobile.png">
                 </div>
             </div>
         </div>
     </section>
     <section id="contact">
-        
+
     </section>
     <script>
         function introBtn(id) {
