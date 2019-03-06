@@ -90,7 +90,7 @@
             opacity: 1;
             text-align: center;
             color: black;
-            width: 400px;
+            max-width: 400px;
         }
 
         .profile-pic img {
@@ -103,10 +103,16 @@
             box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
         }
 
+        .skill-title {
+            color: white;
+            margin-left: 50px;
+            transition: 2s;
+        }
+
         .skill-title.active {
             color: black;
+            margin-left: 0;
             text-align: center;
-            /*            margin: 0 100vh;*/
         }
 
         .skill-image {
@@ -361,16 +367,16 @@
                 <div id="mobile-proxialert" class="col-sm-6">
                     <img class="center-block" src="../media/images/proxialert-mobile.png">
                 </div>
-                <div id="proxi-desc" class="col-sm-6">
+                <div id="proxi-desc" class="col-sm-6 align-middle section-spacer">
                     <h1>ProxiAlert</h1>
-                    <p>ProxiAlert is an android app designed to notify the user when they aproach a specified location. It was created for a small busness owner who makes visits to apartment offices; needing a way to remind him when he is in the area.
+                    <p>ProxiAlert is an android app designed to notify the user when they approach a specified location. It was created for a small busness owner who makes visits to apartment offices; needing a way to remind him when he is in the area.
                         features include: Local storage, geofencing, gmaps directions, gmaps display of all locations, recorded voice for hands free, due date.</p>
                 </div>
             </div>
             <div id="cchl" class="mobile-display"></div>
             <div class="row md">
                 <div class="col-sm-2"></div>
-                <div id="cchl-desc" class="col-sm-4">
+                <div id="cchl-desc" class="col-sm-4 align-middle">
                     <h1>CCHL</h1>
                     <p>This app was designed to improve productivity at my current job. It helps my team keep track of 1700 different lights.
                         features include: Data sorting and editing, API, google users </p>
@@ -432,37 +438,69 @@
             if (isInViewport(skill)) {
                 makeActive(skill);
             }
-
+            
             if (isInViewport(cpp)) {
-                setTimeout(makeActive.bind(null, cpp), 0);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, cpp), 0);
+                } else {
+                    makeActive(cpp);
+                }
             }
 
             if (isInViewport(java)) {
-                setTimeout(makeActive.bind(null, java), 250);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, java), 250);
+                } else {
+                    makeActive(java);
+                }
             }
 
             if (isInViewport(html)) {
-                setTimeout(makeActive.bind(null, html), 500);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, html), 500);
+                } else {
+                    makeActive(html);
+                }
             }
 
             if (isInViewport(css)) {
-                setTimeout(makeActive.bind(null, css), 750);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, css), 750);
+                } else {
+                    makeActive(css);
+                }
             }
 
             if (isInViewport(js)) {
-                setTimeout(makeActive.bind(null, js), 0);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, js), 0);
+                } else {
+                    makeActive(js);
+                }
             }
 
             if (isInViewport(php)) {
-                setTimeout(makeActive.bind(null, php), 250);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, php), 250);
+                } else {
+                    makeActive(php);
+                }
             }
 
             if (isInViewport(sql)) {
-                setTimeout(makeActive.bind(null, sql), 500);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, sql), 500);
+                } else {
+                    makeActive(sql);
+                }
             }
 
             if (isInViewport(git)) {
-                setTimeout(makeActive.bind(null, git), 750);
+                if (window.innerWidth > 767) {
+                    setTimeout(makeActive.bind(null, git), 750);
+                } else {
+                    makeActive(git);
+                }
             }
 
             if (isInViewport(proxi)) {
